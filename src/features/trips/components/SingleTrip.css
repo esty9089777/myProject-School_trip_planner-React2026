@@ -1,0 +1,124 @@
+/* SignalTrip.css */
+.trip-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 20px auto;
+  direction: rtl; /* יישור מימין לשמאל */
+}
+
+.trip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-info {
+  text-align: right;
+}
+
+.trip-title {
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-close {
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.delete-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+.delete-icon:hover {
+  color: #c0392b;
+}
+
+.tags-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  justify-content: flex-end; /* יישור התגים לימין */
+}
+
+.tag {
+  background-color: #fff; /* רקע לבן */
+  color: #555;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  border: 1px solid #ddd; /* מסגרת לתגים */
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.schedule-row {
+display: flex;
+  justify-content: space-between; /* דוחף את השעה לקצה אחד ואת הפעילות לשני */
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px inset #f9f9f9;
+}
+
+.time-col {
+ color: #999;
+  font-family: 'Courier New', Courier, monospace; /* פונט של מספרים נראה טוב יותר ככה */
+  min-width: 100px;
+  text-align: left;
+}
+
+.activity-col {
+ text-align: right;
+  flex-grow: 1;
+  font-weight: 500;
+  color: #333;
+ }
+
+ .trip-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start; /* מזיז את ה "נוצר" לצד שמאל של הכרטיס */
+}
+
+.created-at {
+  font-size: 0.75rem;
+  color: #bbb;
+  direction: rtl;
+}
+
+.activity-name {
+  font-weight: bold;
+  color: #444;
+}
+
+.sub-text {
+  color: #aaa;
+  font-size: 0.85em;
+  margin-top: 2px;
+}
