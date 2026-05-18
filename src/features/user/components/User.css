@@ -1,0 +1,281 @@
+/* קובץ User.css - מותאם אישית למחלקות החדשות וברעיון העיצוב המעוגל */
+
+.register-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 35px;
+  background-color: var(--bg); /* משתמש ברקע הדינמי של האתר */
+  border: 1px solid var(--border); /* הגבול העדין של האתר */
+  border-radius: 16px; /* פינות מעוגלות לתיבה הראשי */
+  box-shadow: var(--shadow); /* הצל המובנה של האתר */
+  direction: rtl;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.register-title {
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--text-h);
+}
+
+/* עיצוב שדות הקלט והסלקטים שייראו כמו התגיות המעוגלות */
+.form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px; /* קימור עגול ושלם לשדות */
+  background-color: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+  box-sizing: border-box;
+  font-family: var(--sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--accent); /* צבע האפקט הסגול של האתר בפוקוס */
+  box-shadow: 0 0 0 3px var(--accent-bg);
+  outline: none;
+}
+
+/* הפיכת כפתור ההרשמה לתגית מעוגלת נקייה הממוקמת בשמאל */
+.submit-button {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px; /* מבנה נמוך ורחב כמו תגית פעולה */
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-h);
+  
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 20px; /* כפתור מעוגל קצוות */
+  
+  cursor: pointer;
+  margin-top: 15px;
+  float: left; /* זורק את הכפתור לצד שמאל התחתון */
+  font-family: var(--sans);
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: var(--code-bg); /* שינוי גוון עדין בריחוף */
+  border-color: var(--text);
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* עיצוב הודעות הסטטוס (הצלחה ושגיאה) בקצוות מעוגלים */
+.status-message {
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.status-message.success {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.status-message.error {
+  background-color: rgba(220, 53, 69, 0.08);
+  color: #dc3545;
+  border-color: rgba(220, 53, 69, 0.2);
+}
+
+/* מניעת קריסה של התיבה בגלל ה-float של הכפתור */
+.register-form::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* קבוצת תגיות הבחירה */
+.custom-pill-group {
+  display: flex;
+  gap: 10px; /* מרווח בין התגיות */
+  margin-top: 5px;
+  flex-wrap: wrap; /* תמיכה בשבירת שורות במסכים קטנים */
+}
+
+/* עיצוב בסיסי לכל תגית בחירה */
+.pill-option {
+  padding: 8px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--sans);
+  
+  /* מראה התחלתי - רקע בהיר וגבול דק בדיוק כמו בדוגמה */
+  background-color: var(--code-bg);
+  color: var(--text-h);
+  border: 1px solid var(--border);
+  border-radius: 20px; /* קימור עגול ושלם */
+  
+  transition: all 0.2s ease;
+}
+
+/* אפקט מעבר קל בריחוף מעל תגית לא נבחרת */
+.pill-option:hover:not(.active) {
+  background-color: var(--border);
+  border-color: var(--text);
+}
+
+/* עיצוב התגית שנבחרה - הרקע הירוק המלא מהדוגמה */
+.pill-option.active {
+  background-color: #007f4e; /* ירוק עמוק ומקצועי */
+  color: #ffffff; /* טקסט לבן לקריאות מלאה */
+  border-color: #007f4e;
+  box-shadow: 0 2px 5px rgba(0, 127, 78, 0.2); /* צל קליל תחת הכפתור הנבחר */
+}
+
+/* ==========================================================================
+   עיצוב עמוד PersonalArea - מותאם לקו העיצובי המעוגל והדינמי של האתר
+   ========================================================================== */
+
+.personal-area-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 35px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px; /* תואם ל-register-container */
+  box-shadow: var(--shadow);
+  direction: rtl;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.personal-area-title {
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+/* כפתור בסיסי מעוגל ונקי (כמו כפתור הצגת הטיולים) */
+.personal-button {
+  padding: 8px 24px; /* מבנה נמוך ורחב כמו תגית פעולה */
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-h);
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px; /* קימור עגול מלא */
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.2s ease;
+}
+
+.personal-button:hover:not(:disabled) {
+  background-color: var(--border);
+  border-color: var(--text);
+}
+
+/* כפתור יצירת טיול חדש - משתמש בצבע האפקט או הירוק המקצועי */
+.personal-button.create-btn {
+  background-color: #007f4e; /* תואם לצבע הירוק של ה-pill active */
+  color: #ffffff;
+  border-color: #007f4e;
+  box-shadow: 0 2px 5px rgba(0, 127, 78, 0.2);
+}
+
+.personal-button.create-btn:hover {
+  background-color: #00663f;
+  border-color: #00663f;
+}
+
+.personal-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* רשימת הטיולים מהעבר */
+.trips-list-section {
+  margin-top: 25px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.trips-list-title {
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.trips-list-wrapper {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* פריט טיול בודד ברשימה */
+.trip-card-item {
+  margin-bottom: 15px;
+  padding: 16px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px; /* פינות מעוגלות בעדינות לכרטיסייה פנימית */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.trip-card-item:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.trip-card-header {
+  font-weight: 600;
+  color: var(--accent); /* צבע הדגש הסגול של האתר */
+  font-size: 16px;
+}
+
+.trip-card-date {
+  font-size: 13px;
+  color: var(--text);
+  margin-right: 10px;
+}
+
+.trip-card-desc {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: var(--text-h);
+  line-height: 1.5;
+}
