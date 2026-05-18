@@ -8,8 +8,7 @@
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -41,8 +40,7 @@
     --accent-bg: rgba(192, 132, 252, 0.15);
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
   #social .button-icon {
@@ -52,6 +50,7 @@
 
 body {
   margin: 0;
+  background: var(--bg); /* משתמש ברקע הדינמי המקורי */
 }
 
 #root {
@@ -66,8 +65,7 @@ body {
   box-sizing: border-box;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
@@ -82,6 +80,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,12 +90,12 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
 
-code,
-.counter {
+code, .counter {
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
@@ -108,4 +107,60 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* =================================================== */
+/* עיצובים גלובליים מותאמים לטפסים (החלק המתווסף שסודר) */
+/* =================================================== */
+
+.app-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: right; /* תמיכה בטקסט מימין לשמאל */
+}
+
+.app-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-h); /* מותאם דינמית לצבע הכותרות */
+}
+
+.app-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border); /* שימוש בגבול המקורי של האתר */
+  background-color: var(--bg); /* הרקע ישתנה ב-Dark Mode אוטומטית */
+  color: var(--text-h);
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: var(--sans);
+}
+
+.app-input:focus {
+  border-color: var(--accent); /* פוקוס בצבע האפקט הסגול של האתר שלך */
+  outline: none;
+}
+
+.app-btn-primary {
+  padding: 12px;
+  background-color: var(--accent); /* כפתור בצבע האפקט הסגול היפה של האתר */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: var(--sans);
+  transition: opacity 0.2s;
+}
+
+.app-btn-primary:hover:not(:disabled) {
+  opacity: 0.9; /* אפקט הובר נקי שמתאים לכל צבע */
+}
+
+.app-btn-primary:disabled {
+  background-color: var(--border);
+  color: var(--text);
+  cursor: not-allowed;
 }
