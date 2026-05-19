@@ -1,30 +1,21 @@
 import { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom'; // ייבוא ה-BrowserRouter כדי לפתור את השגיאה הקודמת
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
-import heroImg from './assets/hero.png';
-import './App.css';
-
-import SingleTrip from './features/trips/components/SingleTrip';
-import AllTrips from './features/trips/components/AllTrips';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './features/user/components/Register';
-import PersonalArea from './features/user/components/PersonalArea';
+import PersonalArea from './features/user/components/PersonalArea'; // וודאי ששורה זו קיימת!
+import AllTrips from './features/trips/components/AllTrips';
+import SingleTrip from './features/trips/components/SingleTrip';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
-      <div style={{ direction: 'rtl', padding: '20px' }}>
-        <h1>ברוכים הבאים למתכנן הטיולים שלנו!</h1>
-        
-        {/* הקומפוננטות של הפרויקט שלך */}
-        <PersonalArea />
-        <Register />
-        <AllTrips />
-        <SingleTrip />
-      </div>
-    </BrowserRouter>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/personal-area" element={<PersonalArea />} />
+      </Routes>
+    </Router>
   );
 }
 
