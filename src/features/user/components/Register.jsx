@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './User.css';
 
 const SchoolTypeEnum = {
@@ -14,6 +15,7 @@ const UserRoleEnum = {
 };
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     userName: '',
     userEmail: '',
@@ -45,7 +47,7 @@ const Register = () => {
     setMessage({ type: '', text: '' });
 
     try {
-      const response = await fetch('http://localhost:5017/api/auth/register', {
+      const response = await fetch('http://localhost:5017/api/user/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,6 +67,7 @@ const Register = () => {
           schoolType: SchoolTypeEnum.ElementarySchool,
           userRole: UserRoleEnum.User
         });
+        navigate('/personal-area');
       } else {
         setMessage({ type: 'error', text: data.message || 'אירעה שגיאה בתהליך הרישום.' });
       }
@@ -179,13 +182,6 @@ const Register = () => {
               onClick={() => setFormData(prev => ({ ...prev, userRole: UserRoleEnum.BusinessOwner }))}
             >
               בעל עסק
-            </button>
-            <button
-              type="button"
-              className={`pill-option ${formData.userRole === UserRoleEnum.Admin ? 'active' : ''}`}
-              onClick={() => setFormData(prev => ({ ...prev, userRole: UserRoleEnum.Admin }))}
-            >
-              מנהל
             </button>
           </div>
         </div>
